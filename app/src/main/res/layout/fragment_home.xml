@@ -25,6 +25,13 @@
         android:layout_marginTop="480dp"
         android:layout_centerHorizontal="true"/>
 
+    <TextView
+        android:id = "@+id/percent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="230dp"/>
+
     <Button
         android:id="@+id/button"
         android:text = "Go"
@@ -48,21 +55,38 @@
         android:layout_height="wrap_content"
         />
 
-    <ImageView
-        android:id="@+id/happy"
-        android:layout_width="170dp"
-        android:layout_height="165dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"
-        android:src="@drawable/smily"
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id = "@+id/pichu"
+        android:layout_centerHorizontal = "true"
+
+        android:layout_width = "wrap_content"
+        android:layout_height = "match_parent"
+        android:src = "@drawable/pichu"
+
         />
 
-    <ImageView
-        android:id="@+id/sad"
-        android:layout_width="170dp"
-        android:layout_height="165dp"
+
+    <pl.droidsonroids.gif.GifImageButton
+        android:id = "@+id/levelup"
+        android:layout_centerHorizontal = "true"
+        android:background="#00FFFFFF"
+        android:layout_width = "wrap_content"
+        android:layout_height = "match_parent"
+        android:src = "@drawable/levelup"
+        />
+
+
+
+    <pl.droidsonroids.gif.GifImageButton
+        android:id="@+id/pikachuHappy"
+        android:layout_width="wrap_content"
+        android:background = "#00FFFFFF"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"
-        android:src="@drawable/sad" />
+        android:src="@drawable/happy" />
+
+
 
 </RelativeLayout>
