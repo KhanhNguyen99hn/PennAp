@@ -51,6 +51,13 @@ public class HomeFragment extends Fragment {
 
         Button button = (Button) view.findViewById(R.id.button);
   //      final TextView percent = (TextView) view.findViewById(R.id.percent);
+        
+     /*     button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bar.setProgress(amountXP(String x) / 1000 * 100);
+            }
+        }); */
 
 
       button.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +93,16 @@ public class HomeFragment extends Fragment {
                 }
 
         });
+        
+   /*   public static int amountXP(String str) {
+        int idx = str.lastIndexOf("-");
+        if (str.contains("transaction_date")){
+            return Integer.parseInt(str.substring(idx + 4));
+        } else {
+            return Integer.parseInt(str.substring(idx + 4)) * -1;
+        }
+    } */
+
 
 
 
