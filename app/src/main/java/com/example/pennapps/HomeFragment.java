@@ -39,20 +39,23 @@ public class HomeFragment extends Fragment {
         amount.setTextSize(25);
         amount.setTextColor(Color.WHITE);
 
-       // final EditText input = (EditText) view.findViewById(R.id.number);
-        final ImageView happyImage = (ImageView) view.findViewById(R.id.happy);
-        final ImageView sadImage = (ImageView) view.findViewById(R.id.sad);
-        sadImage.setVisibility(View.INVISIBLE);
-        happyImage.setVisibility(View.INVISIBLE);
-        Button button = (Button) view.findViewById(R.id.button);
+        final ImageView pichu = (ImageView) view.findViewById(R.id.pichu);
+     //   final ImageView pikachuSad = view.findViewById(R.id.pikachuSad);
+        final ImageView pikachuHappy = view.findViewById(R.id.pikachuHappy);
+        final ImageView levelUp = view.findViewById(R.id.levelup);
 
+        pichu.setVisibility(View.VISIBLE);
+        levelUp.setVisibility(View.INVISIBLE);
+     //   pikachuSad.setVisibility(View.INVISIBLE);
+        pikachuHappy.setVisibility(View.INVISIBLE);
+
+        Button button = (Button) view.findViewById(R.id.button);
+  //      final TextView percent = (TextView) view.findViewById(R.id.percent);
 
 
       button.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               // String progress = input.getText().toString();
-              //  bar.setProgress(Integer.parseInt(progress));
                new Thread(new Runnable() {
                    @Override
                    public void run() {
@@ -63,31 +66,18 @@ public class HomeFragment extends Fragment {
                                 @Override
                                 public void run() {
                                     bar.setProgress(barStat);
-                                    if(bar.getProgress() <= 20) {
-                                        sadImage.setVisibility(View.VISIBLE);
-                                    } else {
-                                        sadImage.setVisibility(View.GONE);
-                                        happyImage.setVisibility(View.VISIBLE);
+                                    if(bar.getProgress() >= 95) {
+                                        pichu.setVisibility(View.GONE);
+                                        levelUp.setVisibility(View.VISIBLE);
+                                        if(bar.getProgress() == 100) {
+                                            levelUp.setVisibility(View.GONE);
+                                           // pichu.setVisibility(View.GONE);
+                                            pikachuHappy.setVisibility(View.VISIBLE);
+
+                                        }
                                     }
                                 }
                             });
-                       }
-
-                       while(barStat > 0) {
-                           barStat--;
-                           android.os.SystemClock.sleep(300);
-                           handler.post(new Runnable() {
-                               @Override
-                               public void run() {
-                                   bar.setProgress(barStat);
-                                   if(bar.getProgress() >= 50) {
-                                       happyImage.setVisibility(View.VISIBLE);
-                                   } else {
-                                       happyImage.setVisibility(View.GONE);
-                                       sadImage.setVisibility(View.VISIBLE);
-                                   }
-                               }
-                           });
                        }
 
                    }
